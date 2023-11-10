@@ -117,7 +117,7 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>
-            <version>1.11.931</version>
+            <version>1.12.586</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -198,14 +198,11 @@
                         <phase>package</phase>
                         <configuration>
                             <tasks>
-                                <unzip src="${project.build.directory}/${project.build.finalName}.war"
-                                       dest="${project.build.directory}/${project.build.finalName}"/>
+                                <unzip src="${project.build.directory}/${project.build.finalName}.war" dest="${project.build.directory}/${project.build.finalName}"/>
                                 <copy todir="${project.build.directory}/${project.build.finalName}/" overwrite="false">
                                     <fileset dir="./" includes=".platform/**"/>
                                 </copy>
-                                <zip compress="false"
-                                     destfile="${project.build.directory}/${project.build.finalName}.war"
-                                     basedir="${project.build.directory}/${project.build.finalName}"/>
+                                <zip compress="false" destfile="${project.build.directory}/${project.build.finalName}.war" basedir="${project.build.directory}/${project.build.finalName}"/>
                             </tasks>
                         </configuration>
                         <goals>
